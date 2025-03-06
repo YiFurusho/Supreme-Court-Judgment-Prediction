@@ -3,7 +3,7 @@ A mock project of data analysis by python
 ## dataset used:
 <a href="https://www.kaggle.com/datasets/deepcontractor/supreme-court-judgment-prediction">Dataset</a>
 ## Introduction
-The dataset contains information about 3,304 Supreme Court cases, including details such as case names, docket numbers, voting patterns, and issue areas. The primary goal of this analysis is to explore the dataset, address missing values, analyze key variables, and uncover insights into voting patterns and case characteristics.
+The dataset contains information about 3,304 Supreme Court cases of the United States from 1955 to 2021, including details such as case names, docket numbers, voting patterns, and issue areas. The primary goal of this analysis is to explore the dataset, address missing values, analyze key variables, and uncover insights into voting patterns and case characteristics.
 
 ## Data Overview
 The dataset consists of 16 columns and 3,303 rows. Key variables include:
