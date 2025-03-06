@@ -7,8 +7,8 @@ The dataset contains information about 3,304 Supreme Court cases of the United S
 
 ## Data Overview
 The dataset consists of 16 columns and 3,303 rows. Key variables include:
-•	Categorical variables: term, decision_type, first_party_winner, disposition, issue_area
-•	Numerical variables: facts_len, majority_vote, minority_vote
+- Categorical variables: term, decision_type, first_party_winner, disposition, issue_area
+- Numerical variables: facts_len, majority_vote, minority_vote
 
 ## Data Quality Assessment
 Missing Values
