@@ -53,14 +53,14 @@ Scatter Plot Analysis
 A scatter plot between facts_len and majority_vote revealed no strong correlation between the length of case facts and voting outcomes.
 
 ## Key Insights and Findings
-1).	The dataset primarily focuses on modern Supreme Court cases.
-2).	Most decisions involve high majority votes (7–9), indicating strong consensus among justices.
-3).	Outliers in the length of case facts suggest that some cases are more complex or significant than others.
-4).	Missing data in key columns like disposition and issue_area may limit some analyses but can be mitigated by creating categories like "Not Specified."
+- The dataset primarily focuses on modern Supreme Court cases.
+- Most decisions involve high majority votes (7–9), indicating strong consensus among justices.
+- Outliers in the length of case facts suggest that some cases are more complex or significant than others.
+- Missing data in key columns like disposition and issue_area may limit some analyses but can be mitigated by creating categories like "Not Specified."
 
 ## Limitations:
-1).	Missing data in critical columns like issue_area may obscure trends in certain analyses.
-2).	Outliers in numerical columns like facts_len could skew results if not handled carefully.
+- Missing data in critical columns like issue_area may obscure trends in certain analyses.
+- Outliers in numerical columns like facts_len could skew results if not handled carefully.
 
 ## Conclusion
 This analysis provided an overview of key trends and patterns in Supreme Court decisions based on the dataset. While most decisions reflect strong consensus among justices, certain cases stand out due to their complexity or unique characteristics.
