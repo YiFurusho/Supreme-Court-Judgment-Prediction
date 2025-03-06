@@ -31,28 +31,23 @@ Using df.isnull().sum(), to identify missing values in several columns:
 - minority_vote: Minority votes are generally low, with an average of ~1.7 votes.
 
 ## Categorical Variable Analysis
-Using .value_counts(), to analyze the distribution of key categorical variables:
-Term Distribution-
-The most frequent terms are clustered in recent years (e.g., post-2000), indicating a focus on modern cases.
-Decision Type-
-The most common decision types include "Majority Opinion" and "Per Curiam," reflecting typical Supreme Court practices.
-First Party Winner-
-The first party won in approximately ~80% of cases where data was available.
+- Using .value_counts(), to analyze the distribution of key categorical variables:
+- Term Distribution-The most frequent terms are clustered in recent years (e.g., post-2000), indicating a focus on modern cases.
+- Decision Type-The most common decision types include "Majority Opinion" and "Per Curiam," reflecting typical Supreme Court practices.
+- First Party Winner-The first party won in approximately ~80% of cases where data was available.
 
 ## Numerical Variable Analysis
-Distribution Analysis
-Use histograms for numerical variables (facts_len, majority_vote, and minority_vote):
-•	facts_len: Skewed distribution with a few extreme outliers.
-•	majority_vote: Most cases have a majority vote of either 7 or 9.
-•	minority_vote: Minority votes are concentrated around lower values (0–2).
+Distribution Analysis-Use histograms for numerical variables (facts_len, majority_vote, and minority_vote):
+- facts_len: Skewed distribution with a few extreme outliers.
+- majority_vote: Most cases have a majority vote of either 7 or 9.
+- minority_vote: Minority votes are concentrated around lower values (0–2).
 
 Outliers
-Outliers were identified in the facts_len column, where some cases had extremely long fact descriptions (>5,000 characters). These may represent highly complex or landmark cases.
+- Outliers were identified in the facts_len column, where some cases had extremely long fact descriptions (>5,000 characters). These may represent highly complex or landmark cases.
 
 ## Relationship Analysis
-Cross-tabulation
-Using cross-tabulations (pd.crosstab()), to explore relationships between categorical variables:
-•	Cases where the first party won were more likely to involve "Majority Opinion" decision types.
+Cross-tabulation-Using cross-tabulations (pd.crosstab()), to explore relationships between categorical variables:
+- Cases where the first party won were more likely to involve "Majority Opinion" decision types.
 
 Scatter Plot Analysis
 A scatter plot between facts_len and majority_vote revealed no strong correlation between the length of case facts and voting outcomes.
