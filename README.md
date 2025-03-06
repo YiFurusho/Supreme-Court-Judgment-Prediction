@@ -13,22 +13,22 @@ The dataset consists of 16 columns and 3,303 rows. Key variables include:
 ## Data Quality Assessment
 Missing Values
 Using df.isnull().sum(), to identify missing values in several columns:
-•	docket: 11 missing values
-•	first_party: 1 missing value
-•	second_party: 1 missing value
-•	first_party_winner: 15 missing values
-•	decision_type: 7 missing values
-•	disposition: 72 missing values
-•	issue_area: 142 missing values
+- docket: 11 missing values
+- first_party: 1 missing value
+- second_party: 1 missing value
+- first_party_winner: 15 missing values
+- decision_type: 7 missing values
+- disposition: 72 missing values
+- issue_area: 142 missing values
 
 ## Handling Missing Values
-•	Columns with few missing values (docket, first_party, second_party) were filled with "Unknown."
-•	Columns with more missing values (disposition, issue_area) were filled with "Not Specified."
+- Columns with few missing values (docket, first_party, second_party) were filled with "Unknown."
+- Columns with more missing values (disposition, issue_area) were filled with "Not Specified."
 
 ## Observations:
-•	facts_len (length of case facts): Most cases have fact descriptions around ~1,100 characters, but some cases have unusually long descriptions (up to 6,201 characters).
-•	majority_vote: The average majority vote is ~7 votes, with a maximum of 9.
-•	minority_vote: Minority votes are generally low, with an average of ~1.7 votes.
+- facts_len (length of case facts): Most cases have fact descriptions around ~1,100 characters, but some cases have unusually long descriptions (up to 6,201 characters).
+- majority_vote: The average majority vote is ~7 votes, with a maximum of 9.
+- minority_vote: Minority votes are generally low, with an average of ~1.7 votes.
 
 ## Categorical Variable Analysis
 Using .value_counts(), to analyze the distribution of key categorical variables:
