@@ -1,67 +1,89 @@
-# Supreme-Court-Judgment-Prediction
-A mock project of data analysis by python
-## dataset used:
-<a href="https://www.kaggle.com/datasets/deepcontractor/supreme-court-judgment-prediction">Dataset</a>
-## Introduction
-The dataset contains information about 3,304 Supreme Court cases of the United States from 1955 to 2021, including details such as case names, docket numbers, voting patterns, and issue areas. The primary goal of this analysis is to explore the dataset, address missing values, analyze key variables, and uncover insights into voting patterns and case characteristics.
+# Supreme Court Judgment Prediction: Exploratory Data Analysis
 
-## Data Overview
-The dataset consists of 16 columns and 3,303 rows. Key variables include:
-- Categorical variables: term, decision_type, first_party_winner, disposition, issue_area
-- Numerical variables: facts_len, majority_vote, minority_vote
+## Project Overview
 
-## Data Quality Assessment
-Missing Values
-Using df.isnull().sum(), to identify missing values in several columns:
-- docket: 11 missing values
-- first_party: 1 missing value
-- second_party: 1 missing value
-- first_party_winner: 15 missing values
-- decision_type: 7 missing values
-- disposition: 72 missing values
-- issue_area: 142 missing values
+This project performs an exploratory data analysis (EDA) on a dataset of United States Supreme Court cases spanning from 1955 to 2021. The analysis aims to uncover key insights into voting patterns, case characteristics, and data quality issues.  The ultimate goal of such an EDA is often to inform predictive modeling efforts, though this project focuses on the descriptive analysis.
 
-## Handling Missing Values
-- Columns with few missing values (docket, first_party, second_party) were filled with "Unknown."
-- Columns with more missing values (disposition, issue_area) were filled with "Not Specified."
+## Author Information
 
-## Observations:
-- facts_len (length of case facts): Most cases have fact descriptions around ~1,100 characters, but some cases have unusually long descriptions (up to 6,201 characters).
-- majority_vote: The average majority vote is ~7 votes, with a maximum of 9.
-- minority_vote: Minority votes are generally low, with an average of ~1.7 votes.
+*   **Author:** I Furusho
+*   **Role:** Upcoming Data Analyst
+*   **Date:** March 9, 2025
 
-## Categorical Variable Analysis
-- Using .value_counts(), to analyze the distribution of key categorical variables:
-- Term Distribution-The most frequent terms are clustered in recent years (e.g., post-2000), indicating a focus on modern cases.
-- Decision Type-The most common decision types include "Majority Opinion" and "Per Curiam," reflecting typical Supreme Court practices.
-- First Party Winner-The first party won in approximately ~80% of cases where data was available.
+## Dataset
 
-## Numerical Variable Analysis
-Distribution Analysis-Use histograms for numerical variables (facts_len, majority_vote, and minority_vote):
-- facts_len: Skewed distribution with a few extreme outliers.
-- majority_vote: Most cases have a majority vote of either 7 or 9.
-- minority_vote: Minority votes are concentrated around lower values (0–2).
+*   **Source:** [Supreme Court Judgment Prediction Dataset on Kaggle](https://www.kaggle.com/datasets/deepcontractor/supreme-court-judgment-prediction)
+*   **Description:** The dataset contains information on 3,304 Supreme Court cases, including case details, voting patterns of the justices, and assigned issue areas.
 
-Outliers
-- Outliers were identified in the facts_len column, where some cases had extremely long fact descriptions (>5,000 characters). These may represent highly complex or landmark cases.
+## Data Description
 
-## Relationship Analysis
-Cross-tabulation-Using cross-tabulations (pd.crosstab()), to explore relationships between categorical variables:
-- Cases where the first party won were more likely to involve "Majority Opinion" decision types.
+The dataset comprises 3,303 rows and 16 columns with the following structure:
 
-Scatter Plot Analysis
-A scatter plot between facts_len and majority_vote revealed no strong correlation between the length of case facts and voting outcomes.
+*   **Categorical Variables:**
+    *   `term`:  The Supreme Court term in which the case was decided.
+    *   `decision_type`: The type of decision issued (e.g., Majority Opinion, Per Curiam).
+    *   `first_party_winner`: Indicates whether the first party in the case won (True/False).
+    *   `disposition`:  The outcome of the case.
+    *   `issue_area`: The primary legal area involved in the case (e.g., Civil Rights, First Amendment).
+*   **Numerical Variables:**
+    *   `facts_len`: The length (in characters) of the case's factual description.
+    *   `majority_vote`: The number of justices voting with the majority.
+    *   `minority_vote`: The number of justices voting with the minority.
 
-## Key Insights and Findings
-- The dataset primarily focuses on modern Supreme Court cases.
-- Most decisions involve high majority votes (7–9), indicating strong consensus among justices.
-- Outliers in the length of case facts suggest that some cases are more complex or significant than others.
-- Missing data in key columns like disposition and issue_area may limit some analyses but can be mitigated by creating categories like "Not Specified."
+## Methodology
 
-## Limitations:
-- Missing data in critical columns like issue_area may obscure trends in certain analyses.
-- Outliers in numerical columns like facts_len could skew results if not handled carefully.
+The analysis follows these steps:
+
+1.  **Data Loading and Inspection:** Load the dataset using `pandas` and examine its structure, datatypes, and initial rows.
+2.  **Data Quality Assessment:** Identify and quantify missing values using `df.isnull().sum()`.  Check for duplicate rows that might skew analysis.
+3.  **Missing Value Handling:** Address missing data using appropriate strategies based on the nature and extent of missingness.
+4.  **Exploratory Data Analysis:**
+    *   **Categorical Variable Analysis:** Examine the distribution of key categorical variables (e.g., `term`, `decision_type`, `first_party_winner`) using `value_counts()` to understand the prevalence of different categories.
+    *   **Numerical Variable Analysis:**
+        *   Generate descriptive statistics (`df.describe()`) for numerical variables to understand their central tendency, dispersion, and range.
+        *   Visualize the distributions of numerical variables (e.g., `facts_len`, `majority_vote`, `minority_vote`) using histograms.
+        *   Identify potential outliers in numerical variables based on their distributions and descriptive statistics.
+5.  **Relationship Analysis:**
+    *   Explore relationships between categorical variables using cross-tabulations (`pd.crosstab()`).
+    *   Investigate relationships between numerical variables using scatter plots.
+
+## Data Cleaning and Preprocessing
+
+### Handling Missing Values:
+
+*   **Columns with low missingness:** (`docket`, `first_party`, `second_party`, `first_party_winner`, `decision_type`)
+    *   Missing values were imputed with the string "Unknown."
+*   **Columns with higher missingness:** (`disposition`, `issue_area`)
+    *   Missing values were imputed with the string "Not Specified."
+
+This approach aims to preserve the information contained in the existing data while acknowledging the absence of specific values.
+
+## Key Observations
+
+*   **Temporal Distribution:** The dataset appears to be more heavily weighted towards more recent Supreme Court terms (post-2000).
+*   **Decision Type:**  "Majority Opinion" and "Per Curiam" are the most frequent decision types, reflecting standard Supreme Court practices.
+*   **Case Outcomes:** The first party wins the case in approximately 80% of the instances where the outcome is recorded.
+*   **Voting Patterns:** Majority votes tend to be clustered at 7 or 9, indicating a high degree of consensus among the justices in many cases.
+*   **Case Complexity:** The length of case facts (`facts_len`) varies considerably, with some cases having significantly longer fact descriptions, suggesting a higher degree of complexity or importance.
+
+## Insights and Findings
+
+*   The dataset provides a valuable overview of recent Supreme Court decisions and their characteristics.
+*   The strong consensus observed in many cases (high majority votes) highlights the Court's role in establishing legal precedent.
+*   The presence of outliers in the length of case facts suggests the existence of particularly complex or significant cases that may warrant further investigation.
+*   The handling of missing data allowed for the inclusion of all cases in the analysis, albeit with an acknowledgment of the imputed values.
+
+## Limitations
+
+*   **Missing Data:**  Although addressed, missing data in columns such as `issue_area` may still limit the depth of analysis for specific legal areas.  Further investigation into the reasons *why* this data is missing could be valuable.
+*   **Potential Biases:**  The dataset's focus on more recent cases may introduce a temporal bias, potentially overlooking important historical trends.
+*   **Scope of Analysis:**  This analysis is primarily descriptive and does not delve into causal relationships or predictive modeling.
 
 ## Conclusion
-This analysis provided an overview of key trends and patterns in Supreme Court decisions based on the dataset. While most decisions reflect strong consensus among justices, certain cases stand out due to their complexity or unique characteristics.
 
+This exploratory data analysis provides a foundation for further investigation into Supreme Court judgment prediction. Future work could focus on:
+
+*   Developing predictive models to forecast case outcomes based on the available features.
+*   Conducting more in-depth analysis of specific issue areas.
+*   Incorporating external data sources to enrich the analysis and provide additional context.
+*   Addressing the limitations related to missing data and potential biases.
