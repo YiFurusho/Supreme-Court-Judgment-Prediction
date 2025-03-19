@@ -36,8 +36,8 @@ __doc__ = """
 
 # Set cyberpunk color scheme
 plt.style.use('dark_background')
-colors = ['#00ff00', '#ff00ff', '#00ffff', '#ffff00']
-
+# colors = ['#00ff00', '#ff00ff', '#00ffff', '#ffff00']
+colors = ['#008080', '#fa8072', '#003366', '#468499']
 
 def load_data():
     path = 'data/justice.csv'
@@ -56,7 +56,10 @@ def load_data():
 
 
 def perform_eda(df):
-    fig, axs = plt.subplots(2, 2, figsize=(20, 20))
+    fig, axs = plt.subplots(2, 2, figsize=(15, 15))
+
+    # Increase font size for all subplots
+    plt.rcParams.update({'font.size': 27})
 
     # Facts Length Distribution
     sns.histplot(df['facts_len'], bins=20, kde=True, ax=axs[0, 0], color=colors[0])
@@ -136,24 +139,24 @@ iface = gr.Interface(
         gr.Image(label="Cyberpunk EDA Visualizations", type="pil"),
         gr.Textbox(label="Dataset Analysis", lines=25)
     ],
-    title="⚡ Cyberpunk Justice Data Analyzer ⚡",
-    description="Exploratory analysis of Supreme Court justice data with cyberpunk styling",
-    theme=cyberpunk_theme,
-    css="""
-    .gradio-container {
-        background: linear-gradient(45deg, #1a1a2e, #16213e);
-        color: #00ff9d !important;
-        font-family: 'Courier New', monospace;
-    }
-    h1 {
-        color: #ff00ff !important;
-        text-shadow: 0 0 10px #ff00ff;
-    }
-    .output-image {
-        border: 2px solid #00ffff;
-        box-shadow: 0 0 15px #00ffff;
-    }
-    """
+    title="⚡ Justice Data Analyzer ⚡",
+    description="Exploratory analysis of Supreme Court justice data with cool styling",
+    # theme=cyberpunk_theme,
+    # css="""
+    # .gradio-container {
+    #     background: linear-gradient(45deg, #1a1a2e, #16213e);
+    #     color: #00ff9d !important;
+    #     font-family: 'Courier New', monospace;
+    # }
+    # h1 {
+    #     color: #ff00ff !important;
+    #     text-shadow: 0 0 10px #ff00ff;
+    # }
+    # .output-image {
+    #     border: 2px solid #00ffff;
+    #     box-shadow: 0 0 15px #00ffff;
+    # }
+    # """
 )
 
 if __name__ == "__main__":

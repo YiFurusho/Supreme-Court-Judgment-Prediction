@@ -66,6 +66,9 @@ This approach aims to preserve the information contained in the existing data wh
 *   **Voting Patterns:** Majority votes tend to be clustered at 7 or 9, indicating a high degree of consensus among the justices in many cases.
 *   **Case Complexity:** The length of case facts (`facts_len`) varies considerably, with some cases having significantly longer fact descriptions, suggesting a higher degree of complexity or importance.
 
+## Figures
+![alt text](figs.webp)
+
 ## Insights and Findings
 
 *   The dataset provides a valuable overview of recent Supreme Court decisions and their characteristics.
